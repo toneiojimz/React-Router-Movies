@@ -9,15 +9,6 @@ import './index.css';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 
 
-
-
-
-
-
-
-
-
-
 const rootElement = document.getElementById('root');
 ReactDOM.render(
 <Router>
