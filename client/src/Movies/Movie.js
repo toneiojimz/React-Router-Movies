@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import MovieCard from "./MovieCard";
-import { Link, NavLink } from "react-router-dom";
+
 
 const Movie = (props) => {
   const [movie, setMovie] = useState();
@@ -22,13 +22,7 @@ const id = props.match.params.movieID;
 
   },[id]);
  
-  const saveMovie = () => {
-    const addToSavedList = props.addToSavedList;
-    
-    addToSavedList(<NavLink activeClassName='active' to={`/movies/${movie.id}`}>
-      {movie.title}
-      </NavLink>)
-  }
+ 
 
   if (!movie) {
     return <div>Loading movie information...</div>;
@@ -40,7 +34,7 @@ const id = props.match.params.movieID;
 
       <MovieCard key = {movie.id} movie = {movie}/>
 
-      <div className="save-button" onClick={() => saveMovie()}>Save</div>
+      <div className="save-button">Save</div>
 
     </div>
 
